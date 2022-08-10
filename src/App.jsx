@@ -1,18 +1,20 @@
-import { useState } from 'react'
-import Button from '@mui/material/Button'
-import SettingsIcon from '@mui/icons-material/Settings';
+import Sidebar from './components/Sidebar'
+import Feed from './components/Feed'
+import RightBar from './components/RightBar'
+import Navbar from './components/Navbar'
+import { Box, Stack } from '@mui/material'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-      <Button variant="text">Text</Button>
-      <Button size="small" variant="contained">Contained</Button>
-      <Button disabled variant="outlined">Outlined</Button>
-      <Button variant="contained" href="#text-buttons">Link</Button>
-      <Button startIcon={<SettingsIcon />} variant="contained">Link</Button>
-    </div>
+    <Box className="App">
+      <Navbar/>
+      <Stack direction="row" spacing={2} justifyContent="space-between">
+        <Sidebar />
+        <Feed />
+        <RightBar />
+      </Stack>
+    </Box>
   )
 }
 
